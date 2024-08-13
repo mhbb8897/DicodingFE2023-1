@@ -1,0 +1,548 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: all 0.3s;
+  width: 100%;
+  height: 100%;
+}
+:root {
+  --max-font-size: 30px;
+  --med-font-size: 22px;
+  --min-font-size: 16px;
+}
+
+/* Padding */
+h1 {
+  font-weight: 700;
+  font-size: var(--max-font-size);
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+h2 {
+  font-size: var(--med-font-size);
+}
+article {
+  padding: 1.5rem;
+}
+
+.facilities-item ,.carousel-container, .about-wrapper{
+  border-bottom: 4px solid;
+}
+.heading-text p {
+  font-size: var(--min-font-size);
+}
+
+/* Navbar section */
+/* dibagian ini saya menggunakan float 
+karena navbar menggunakan css dan layouting 
+lainnya full dengan flex */
+header {
+  background: #97db4f;
+  color: black;
+}
+
+.navbar-container {
+  position: inherit;
+  width: 100%;
+  height: auto;
+  z-index: 999;
+  display: inline-block;
+  text-align: center;
+}
+.navbar-container .logo > img {
+  width: 50px;
+  height: 50px;
+  top: 5px;
+  position: relative;
+}
+.navbar-container .logo a img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.navbar-container .logo {
+  float: left;
+  display: block;
+  font-size: 2em;
+  padding: 8px 20px;
+  align-self: center;
+  transition: all 1s;
+}
+.navbar-container .logo a {
+  font-size: var(--med-font-size);
+}
+
+.navbar-container nav a {
+  color: black;
+  opacity: 0.8;
+  font-size: var(--max-font-size-size);
+}
+.navbar-container nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+.navbar-container li a {
+  display: block;
+  padding: 15px 0;
+}
+
+.navbar-container nav li a:hover,
+.navbar-container nav a:hover,
+.navbar-container .menu-btn:hover {
+  transition: all 0.4s;
+  opacity: 0.6;
+}
+
+/* menu */
+.navbar-container nav .menu {
+  clear: both;
+  max-height: 0;
+  transition: all 0.2s ease-out;
+  display: block;
+}
+/* menu icon */
+.navbar-container .menu-icon {
+  cursor: pointer;
+  float: right;
+  top: 35px;
+  right: 20px;
+  position: relative;
+  user-select: none;
+}
+.navbar-container .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 3px;
+  position: inherit;
+  transition: all 0.2s;
+  width: 18px;
+}
+.navbar-container .menu-icon .navicon:before,
+.navbar-container .menu-icon .navicon:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.navbar-container .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.navbar-container .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu button */
+.navbar-container .menu-btn {
+  display: none;
+}
+
+.navbar-container .menu-btn:checked ~ nav .menu {
+  max-height: 300px;
+}
+
+.navbar-container .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.navbar-container .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.navbar-container .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.navbar-container .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.navbar-container .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+/* Navbar section end */
+
+/* main section */
+main {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem 4rem;
+  justify-content: center;
+  margin-inline: auto;
+  gap: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+/* main section end */
+/* brand start */
+.brand {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: row wrap;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.article-text-brand a {
+  padding: 0.5rem 1.4rem;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+  letter-spacing: 0.1rem;
+  color: black;
+  font-weight: 500;
+  clip-path: circle(98%);
+  background: #97db4f;
+}
+.article-text-brand a:hover {
+  letter-spacing: 0.2rem;
+  clip-path: polygon(88% 0, 100% 50%, 89% 100%, 0% 100%, 8% 51%, 0% 0%);
+}
+.brand-img,
+.article-text-brand {
+  padding: 10px;
+}
+
+.brand-img {
+  flex: 1 5rem;
+  display: flex;
+}
+.brand-img img {
+  width: 100%;
+  border-radius: 6px;
+}
+.article-text-brand {
+  line-height: 2;
+  flex: 1 5rem;
+}
+.article-text-brand p{
+  line-height: 1.5;
+}
+/* brand end */
+
+/* about content */
+.about-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.about-cards {
+  padding: 20px;
+  background: #dbd054;
+  border-radius: 8px;
+  text-align: center;
+  width: calc(22% - 20px); 
+  min-width: 280px;
+  flex-direction: column;
+  gap: 0.6rem;
+  display: flex;
+  justify-content: center;
+  border: 3px solid;
+  animation: 1.5s infinite alternate move;
+}
+.about-cards:hover {
+  animation-play-state: paused;
+  transform: translateY(-10px);
+  transition: all 0.7s;
+}
+.profile-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.profile-wrapper:hover {
+  animation: 1s infinite alternate-reverse widened;
+}
+/* about end */
+
+/* facilities start */
+.facilities-wrapper {
+  width: 100%;
+}
+.facilities-wrapper .facilities-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.item {
+  flex-basis: calc(33.33% - 10px); /* Lebar minimum untuk 3 kolom */
+  max-width: 300px;
+  display: flex;
+  gap: 1rem;
+}
+
+.item img {
+  max-width: 50px;
+}
+.facilities-text {
+  line-height: 1.2;
+}
+/* facilities end */
+/* konfigurasi yang sama bagian cards antara about dan profile */
+/* aside profile */
+.profile {
+  background-color: #dbd054;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: calc(22% - 20px); /* 3 cards in a row */
+  min-width: 210px;
+  max-height: 421px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.profile:hover {
+  transform: translateY(-10px);
+  box-shadow: 1px 1px 5px 1px #464242;
+  transition: all 0.4s;
+}
+
+.button-profile {
+  justify-content: center;
+  display: flex;
+  gap: 0.5rem;
+}
+.button-profile a {
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  color: #000;
+  align-items: center;
+  opacity: 1;
+  background: #8a8686;
+
+}
+.button-profile a:hover {
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+.img-profile {
+  max-height: 200px;
+}
+
+/* galery start */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  height: auto;
+  padding: 1rem;
+}
+
+.carousel-slide {
+  width: 700px;
+  display: none;
+  animation-duration: 1.5s;
+  animation-name: blur;
+}
+
+.carousel-slide img {
+  width: 100%;
+  max-height: 466px;
+
+  border-radius: 7px;
+}
+.carousel-container a {
+  width: 40px;
+  background: black;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  opacity: 0.4;
+  height: 80%;
+  align-self: center;
+  cursor: pointer;
+}
+.carousel-container a img {
+  width: 40px;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.6s ease;
+}
+
+.carousel-container a:hover {
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+
+/* Carousel animation */
+@keyframes blur {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* galery end */
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: #97db4f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 120px 120px 0 0;
+  bottom: 0;
+}
+
+.social-icon,
+.menu-footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  text-align: center;
+  max-height: 35px;
+}
+
+.social-icon-item,
+.menu-item {
+  list-style: none;
+}
+
+.social-icon-link {
+  font-size: 2rem;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon-link img {
+  max-width: 35px;
+  max-height: 35px;
+}
+.social-icon-link:hover {
+  transform: translateY(-10px);
+}
+
+.menu-link {
+  font-size: 1.2rem;
+  margin: 0 5px;
+  display: inline-block;
+  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 300;
+  color: black;
+  opacity: 0.9;
+}
+
+.menu-link:hover {
+  opacity: 0.7;
+
+}
+
+.footer p {
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+}
+.footer ul {
+  padding-left: 0;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    padding: 20px;
+  }
+
+  .navbar-container li a {
+    border: 4px solid white;
+    border-radius: 10px;
+    font-size: var(--med-font-size);
+  }
+  main {
+    padding: .5rem 1rem .5rem;
+  }
+  article {
+    padding: 1rem;
+  }
+  .brand{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .facilities-wrapper {
+    max-width: 100%;
+  }
+  .item {
+    flex: calc(50% - 10px); 
+  }
+  .profile-wrapper {
+    gap: 1rem;
+  }
+  .profile {
+    width: calc(50% - 20px);
+    max-width: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    flex-basis: calc(100% - 10px);
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .navbar-container li {
+    /* float: left; */
+  }
+  .navbar-container nav li a {
+    padding: 20px 30px;
+    font-size: var(--med-font-size);
+  }
+  .navbar-container nav .menu {
+    clear: none;
+    /* float: right; */
+    max-height: none;
+    display: flex;
+  }
+  .navbar-container .menu-icon {
+    display: none;
+  }
+}

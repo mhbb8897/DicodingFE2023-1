@@ -13,8 +13,8 @@ Proyek ini adalah hasil dari tugas akhir yang diberikan pada kursus "Belajar Das
 - JavaScript (ES6+)
 
 ### Tampilan (Browser PC)
-- #### Light Mode[Alt Text](https://github.com/mhbb8897/proyek_akhir_submission/raw/proyek_akhir_belajar_dasar_pemrograman_dicoding/normal-mode.png)
-- #### Dark Mode[Alt Text](https://github.com/mhbb8897/proyek_akhir_submission/raw/proyek_akhir_belajar_dasar_pemrograman_dicoding/dark-mode.png)
+- #### Light Mode[Alt Text](https://github.com/mhbb8897/DicodingFE2023-1/raw/master/normal-mode.png)
+- #### Dark Mode[Alt Text](https://github.com/mhbb8897/DicodingFE2023-1/raw/master/dark-mode.png)
 
 ## Terimakasih!
 Saya mengucapkan terima kasih yang sebesar-besarnya kepada Dicoding dan IDCamp yang telah menyelenggarakan kursus ini secara gratis. Ini merupakan kesempatan bagi saya untuk belajar dan berkembang lebih jauh dalam mengenali pemrograman dasar web khususnya dari sisi Frontend, dan saya sangat menghargai dukungan serta bimbingan yang telah diberikan sepanjang kursus.
